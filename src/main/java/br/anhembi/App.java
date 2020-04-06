@@ -3,7 +3,7 @@ package br.anhembi;
 /**
  * Hello world!
  */
-public final class App {
+public class App {
     private App() {
     }
 
