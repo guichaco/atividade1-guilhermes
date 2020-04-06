@@ -4,17 +4,23 @@ package br.anhembi;
  * ManageAttendance
  */
 public class ManageAttendance {
-
+	Queue filas;
     public ManageAttendance(int size) {
-
-    }
+    	
+    	 filas = new Queue(size);
+     }
 
     public boolean isEmpty() {
-        return true;
-    }
+        if(filas.size()<=0) {
+    	return true;
+        }else {
+        	return false;
+        }
+        }
 
     public void addClient(Client client) {
 
+    	filas.enqueue(client);
     }
 
     public Client showNext() {
