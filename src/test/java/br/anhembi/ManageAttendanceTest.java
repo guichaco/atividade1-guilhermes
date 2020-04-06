@@ -94,7 +94,7 @@ public class ManageAttendanceTest {
         manager.addClient(cli1Normal);
         manager.addClient(cli3Normal);
 
-        String saidaEsperada = "idoso:vazia;normal:cliente1-cliente3";
+        String saidaEsperada = "idoso:vazia;normal:"+cli1Normal.getName()+"-"+cli3Normal.getName();
         String fila = manager.showQueues();
 
         assertEquals("Filas de clientes sem idodo aguradando", saidaEsperada, fila);
@@ -106,7 +106,7 @@ public class ManageAttendanceTest {
         manager.addClient(cli2Idoso);
         manager.addClient(cli3Normal);
 
-        String saidaEsperada = "idoso:cliente2;normal:cliente1-cliente3";
+        String saidaEsperada = "idoso:"+cli2Idoso.getName()+";normal:"+cli1Normal.getName()+"-"+cli3Normal.getName();
         String fila = manager.showQueues();
 
         assertEquals("Filas de clientes aguradando", saidaEsperada, fila);
