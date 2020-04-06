@@ -42,9 +42,6 @@ public class App {
             	manage.addClient(cliente);
             	break;
             case 2: 
-            	
-            	
-            	
             	break;
            case 3: 
         	   
@@ -60,9 +57,10 @@ public class App {
         	   }else {
         		   System.out.println("Todos os clientes precisam ser atendidos");
         	   }
+        	   break;
         	}
     		
-    	}while(valida);
+    	}while(!valida);
     	
     	
     	
