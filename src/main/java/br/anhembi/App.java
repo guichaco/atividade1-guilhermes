@@ -16,6 +16,7 @@ public class App {
       Scanner e = new Scanner(System.in);
       Client cliente;
       int num;
+      boolean valida = false;
       
       ManageAttendance manage = new ManageAttendance(100);
     	
@@ -40,7 +41,7 @@ public class App {
             	cliente = new Client(nome,idade);
             	manage.addClient(cliente);
             	break;
-            case 2: System.out.println(manage.numClients());
+            case 2: 
             	
             	
             	
@@ -54,12 +55,14 @@ public class App {
         	   
         	   break;
            case 5:
-        	   
-        	   
-        	
+        	   if(manage.numClients() == 0) {
+        		  valida =  true;
+        	   }else {
+        		   System.out.println("Todos os clientes precisam ser atendidos");
+        	   }
         	}
     		
-    	}while(num != 5);
+    	}while(valida);
     	
     	
     	
