@@ -32,6 +32,8 @@ public class App {
         	System.out.println("---------------------------------------------------------------");
             num = e.nextInt();
             
+            
+            
             switch(num) {
             case 1: 
             	System.out.println("Nome: ");
