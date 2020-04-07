@@ -4,15 +4,21 @@ package br.anhembi;
  * ManageAttendance
  */
 public class ManageAttendance {
-	Queue filas;
+	
+	Queue filaNormal;
+	Queue filaIdoso;
+	int cont;
     public ManageAttendance(int size) {
     	
-    	 filas = new Queue(size);
+    	filaNormal = new Queue(size);
+    	filaIdoso  = new Queue(size);
      }
 
     public boolean isEmpty() {
-        if(filas.size()<=0) {
+        if(filaNormal.size()<=0) {
     	return true;
+        }else if(filaIdoso.size()<=0){
+        	return true;
         }else {
         	return false;
         }
@@ -20,26 +26,48 @@ public class ManageAttendance {
 
     public void addClient(Client client) {
 
-    	filas.enqueue(client);
+    	if(client.getAge() > 60) {
+    		filaIdoso.enqueue(client);
+    	}else {
+    		filaNormal.enqueue(client);	
+    	}
+    	
     }
 
     public Client showNext() {
-        return null;
+    	Queue fila = null;
+    	if (0 < 2 && !filaIdoso.isEmpty()) {
+            fila.enqueue(filaIdoso.peek());
+        } else {
+            if (!filaNormal.isEmpty()) {
+                fila.enqueue(filaNormal.peek());
+            }
+        }
+    	
+    	return fila.peek();
+    
     }
 
     public Client getNext() {
-        return null;
+        
+    	
+    	return null;
     }
 
     public String showQueues() {
-        return null;
+    	
+     return "Normal: " + filaNormal.show() + "\nIdoso: " + filaIdoso.show();
+ 	
     }
 
     public int numClients() {
-        return 0;
+        return filaNormal.size() + filaIdoso.size();
     }
 
     public int numElderlyClients() {
-        return 0;
+    	
+    	 return filaIdoso.size();
     }
+    
+   
 }
