@@ -14,7 +14,7 @@ public class ManageAttendance {
     	filaNormal = new Queue(size);
     	filaIdoso  = new Queue(size);
      }
-
+   
     public boolean isEmpty() {
         if(filaNormal.size()<=0) {
     	return true;
