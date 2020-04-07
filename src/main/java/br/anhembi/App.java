@@ -33,7 +33,6 @@ public class App {
             num = e.nextInt();
             
             
-            
             switch(num) {
             case 1: 
             	System.out.println("Nome: ");

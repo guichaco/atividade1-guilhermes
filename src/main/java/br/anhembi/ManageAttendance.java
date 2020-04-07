@@ -6,7 +6,6 @@ package br.anhembi;
 public class ManageAttendance {
 	
 	
-	
 	Queue filaNormal;
 	Queue filaIdoso;
 	int cont;
